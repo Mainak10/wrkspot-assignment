@@ -49,10 +49,6 @@ const CountrySearch = () => {
   }, []);
 
   useEffect(() => {
-    applyFilters();
-  }, [countryNameFilter, selectedPopulationOption]);
-
-  const applyFilters = () => {
     let filteredList = countryList;
 
     if (countryNameFilter) {
@@ -69,7 +65,7 @@ const CountrySearch = () => {
     }
 
     setFilteredCountryList(filteredList);
-  };
+  }, [countryNameFilter, selectedPopulationOption, countryList]);
 
   const handleCountryNameChange = ({ target }) => {
     setCountryNameFilter(target.value);
