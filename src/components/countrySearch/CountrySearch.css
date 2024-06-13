@@ -1,0 +1,22 @@
+.country-search-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2em;
+  width: 50vw;
+}
+.country-search-container .title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.country-search-container .table-controller {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.country-search-container .table-controller .controller-options {
+  display: flex;
+  justify-content: space-around;
+  width: 290px;
+}
