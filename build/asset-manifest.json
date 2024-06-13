@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wrkspot-assignment/static/css/main.180cb83d.css",
+    "main.js": "/wrkspot-assignment/static/js/main.88658979.js",
+    "index.html": "/wrkspot-assignment/index.html",
+    "main.180cb83d.css.map": "/wrkspot-assignment/static/css/main.180cb83d.css.map",
+    "main.88658979.js.map": "/wrkspot-assignment/static/js/main.88658979.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.180cb83d.css",
+    "static/js/main.88658979.js"
+  ]
+}
