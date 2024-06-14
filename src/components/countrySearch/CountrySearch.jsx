@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Input, Select, Button, Typography, Space } from "antd";
 import "./CountrySearch.css";
 import {
   populationFilterOptions,
@@ -8,6 +9,9 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { fetchCountryDetails } from "../../api/getCountryList";
 import Table from "../Table/Table";
+
+const { Title } = Typography;
+const { Option } = Select;
 
 const CountrySearch = () => {
   const [showCountryList, setShowCountryList] = useState(false);
@@ -67,12 +71,12 @@ const CountrySearch = () => {
     setFilteredCountryList(filteredList);
   }, [countryNameFilter, selectedPopulationOption, countryList]);
 
-  const handleCountryNameChange = ({ target }) => {
-    setCountryNameFilter(target.value);
+  const handleCountryNameChange = (e) => {
+    setCountryNameFilter(e.target.value);
   };
 
-  const handlePopulationOptionChange = ({ target }) => {
-    setSelectedPopulationOption(target.value);
+  const handlePopulationOptionChange = (value) => {
+    setSelectedPopulationOption(value);
   };
 
   const clearAllFilters = () => {
@@ -83,40 +87,41 @@ const CountrySearch = () => {
 
   return (
     <div className="country-search-container">
-      <div className="title">Countries Info</div>
+      <Title level={3}>Countries Info</Title>
       <div className="table-controller">
-        <div className="controller-options">
-          <input
-            type="text"
+        <Space direction="horizontal">
+          <Input
             placeholder="Country Name"
-            className="input"
             value={countryNameFilter}
             onChange={handleCountryNameChange}
+            style={{ width: 200 }}
           />
-          <select
+          <Select
             value={selectedPopulationOption}
             onChange={handlePopulationOptionChange}
+            style={{ width: 200 }}
           >
-            <option value="-1" disabled>
+            <Option value="-1" disabled>
               Population
-            </option>
+            </Option>
             {populationFilterOptions.map((el) => (
-              <option key={uuidv4()} value={el.value}>
+              <Option key={uuidv4()} value={el.value}>
                 {el.label}
-              </option>
+              </Option>
             ))}
-          </select>
-          <button className="clear" onClick={clearAllFilters}>
+          </Select>
+          <Button type="link" onClick={clearAllFilters}>
             Clear
-          </button>
-        </div>
-        <button
-          className="show-all-countries"
+          </Button>
+        </Space>
+        <Button
+          type="primary"
           disabled={showCountryList}
           onClick={() => setShowCountryList(true)}
+          style={{ backgroundColor: "#6366f1", borderColor: "#6366f1" }}
         >
           Show all Countries
-        </button>
+        </Button>
       </div>
       <div className="table-content">
         {countryList.length > 0 && showCountryList ? (
