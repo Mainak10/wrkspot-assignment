@@ -88,7 +88,7 @@ const CountrySearch = () => {
         <div className="controller-options">
           <input
             type="text"
-            placeholder="Enter country name..."
+            placeholder="Country Name"
             className="input"
             value={countryNameFilter}
             onChange={handleCountryNameChange}

@@ -4,19 +4,76 @@
   margin: 2em;
   width: 50vw;
 }
+
 .country-search-container .title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1em;
+  color: #333;
 }
 
 .country-search-container .table-controller {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2em;
 }
+
 .country-search-container .table-controller .controller-options {
   display: flex;
-  justify-content: space-around;
-  width: 290px;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-search-container .table-controller .controller-options .input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.country-search-container .table-controller .controller-options select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.country-search-container .table-controller .controller-options .clear {
+  color: #6366f1;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.country-search-container .table-controller .show-all-countries {
+  background-color: #6366f1;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.country-search-container .table-controller .show-all-countries:disabled {
+  background-color: #b3b3f1;
+  cursor: not-allowed;
+}
+
+.table-content {
+  margin-top: 1em;
+}
+
+.table-content p {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  padding: 2em;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

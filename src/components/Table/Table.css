@@ -19,3 +19,7 @@
   background-color: #f2f2f2;
   text-align: left;
 }
+.cell-image {
+  width: 20px;
+  height: 20px;
+}

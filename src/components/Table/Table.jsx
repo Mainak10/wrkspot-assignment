@@ -13,7 +13,17 @@ const Table = ({ tableData, columnMapper }) => {
   const columns = useMemo(() => {
     return Object.keys(columnMapper).map((colId) =>
       columnHelper.accessor(colId, {
-        cell: (info) => info.getValue(),
+        cell: (info) => {
+          if (colId === "flag" || colId === "emblem")
+            return (
+              <img
+                className="cell-image"
+                src={info.getValue()}
+                alt={info.getValue()}
+              />
+            );
+          else return info.getValue();
+        },
         header: columnMapper[colId],
       })
     );
